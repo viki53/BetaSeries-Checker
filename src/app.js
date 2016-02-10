@@ -34,13 +34,10 @@ Pebble.addEventListener('showConfiguration', function(e) {
 			Pebble.openURL('https://www.betaseries.com/oauth?key=' + data.oauth.key);
 			
 			Pebble.addEventListener('webviewclosed', function(e) {
-				console.log('Returned: ' + JSON.stringify(e.response));
-				
-				// user_api_token = ;
-				// localStorage.setItem('user_api_token', user_api_token);
+				console.log('Returned: ' + e.response);
 
 				// Send settings to Pebble watchapp
-				Pebble.sendAppMessage(e.response, function(){
+				Pebble.sendAppMessage({'user_api_token': e.response.token}, function(){
 					console.log('Sent config data to Pebble');  
 				}, function() {
 					console.log('Failed to send config data!');
@@ -54,12 +51,17 @@ Pebble.addEventListener('showConfiguration', function(e) {
 	});
 });
 
-if (!user_api_token) {
-	
-}
-else {
+Pebble.addEventListener('appmessage', function(e) {
+	console.log('Received message: ' + JSON.stringify(e.payload));
+});
+
+function gotUserToken (token) {
+	user_api_token = token;
 	api_headers['X-BetaSeries-Token'] = user_api_token;
-	// 'episodes/list'
+	localStorage.setItem('user_api_token', user_api_token);
+}
+if (user_api_token) {
+	gotUserToken(user_api_token);
 }
 
 var main = new UI.Card({

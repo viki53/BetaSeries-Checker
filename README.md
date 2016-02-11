@@ -1,2 +1,3 @@
-# BetaSeries-Checker
-Pebble app to check your shows BetaSeries
+# BetaSeries Checker for Pebble
+
+Pebble app to check your watched episodes on BetaSeries

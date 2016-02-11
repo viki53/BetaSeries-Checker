@@ -1,0 +1,25 @@
+{
+  "uuid": "243da061-aaa6-4cd7-b79b-afc613ab6a42",
+  "shortName": "BetaSeries",
+  "longName": "BetaSeries Checker",
+  "projectType": "pebblejs",
+  "companyName": "viki53",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "sdkVersion": "3",
+  "targetPlatforms": ["aplite", "basalt", "chalk"],
+  "enableMultiJS": true,
+  "watchapp": {
+    "hiddenApp": false,
+    "watchface": false
+  },
+  "capabilities": [
+    "configurable"
+  ],
+  "appKeys": {
+    "user_api_token": 0
+  },
+  "resources": {
+    "media": []
+  }
+}

@@ -10,7 +10,6 @@ var ajax = require('ajax');
 
 var api_root = 'https://api.betaseries.com/';
 var api_version = '2.4';
-// var api_key = 'bd31490685d2435b57637bc8495f3410';
 var api_key = 'c36b8c62540f';
 var api_headers = {
 	'Accept': 'application/json',
